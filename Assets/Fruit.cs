@@ -1,6 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TouchScript;
+using TouchScript.Gestures;
+using TouchScript.Hit;
+using System;
+using DG.Tweening;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Fruit : MonoBehaviour
 {
@@ -12,6 +19,8 @@ public class Fruit : MonoBehaviour
 
     private void OnEnable()
     {
+        GetComponentInParent<Cell>().fruit= this;
+
         switch (level)
         {
             case 1:
@@ -52,5 +61,49 @@ public class Fruit : MonoBehaviour
             default:
                 break;
         }
+
+        releaseComponent.Released += releasedHandeler;
+
+    }
+
+    [SerializeField] private ReleaseGesture releaseComponent;
+    [SerializeField] private LayerMask LayerMask;
+    [SerializeField] private float rayDetection;
+
+
+    private void OnDisable()
+    {
+        releaseComponent.Released -= releasedHandeler;
+    }
+    private void releasedHandeler(object sender, EventArgs e)
+    {
+        KdTree<Cell> kdtree = new();
+        foreach(Cell cell in InventoryManager.Instance.cell)
+        {
+            kdtree.Add(cell);
+        }
+        Cell _cell = kdtree.FindClosest(transform.position);
+        if (Vector3.Distance(transform.position, _cell.transform.position) < rayDetection && _cell.fruit == null)
+        {
+            StartCoroutine(BOUGEMIEUCONNARD(_cell));
+            return;
+        }
+        StartCoroutine( BOUGECONNARD());
+
+        Debug.Log("pitier");
+    }
+
+    IEnumerator BOUGECONNARD()
+    {
+        yield return new WaitForSeconds(0.01f);
+        GetComponent<RectTransform>().localPosition = Vector3.zero;
+    }
+    IEnumerator BOUGEMIEUCONNARD(Cell _cell)
+    {
+        yield return new WaitForSeconds(0.01f);
+        GetComponentInParent<Cell>().fruit = null;
+        transform.parent = _cell.content.transform;
+        _cell.fruit = this;
+        GetComponent<RectTransform>().localPosition = Vector3.zero;
     }
 }
