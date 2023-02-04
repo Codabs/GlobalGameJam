@@ -25,7 +25,7 @@ public class RacineClicker : MonoBehaviour
     public void Start()
     {
         _SpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        RootHp = RootBaseHp;    
+        RootHp = RootBaseHp;
     }
 
     public void Update()
@@ -35,15 +35,15 @@ public class RacineClicker : MonoBehaviour
             Value += 1;
         }
 
-        if(Value >= MaxValue && HasDuplicated == false)
+        if (Value >= MaxValue && HasDuplicated == false)
         {
             HasDuplicated = true;
 
             this.gameObject.GetComponent<Rigidbody2D>().mass = 1000;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            RandomValue = Random.Range(0, Range);
+            RandomValue = Random.Range(Range/10, Range);
             Duplicate();
-            RandomValue = - RandomValue;
+            RandomValue = -RandomValue;
             Duplicate();
         }
     }
@@ -53,12 +53,12 @@ public class RacineClicker : MonoBehaviour
         DRRotation = Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue);
         //DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
 
-        DRPosition += this.gameObject.transform.TransformDirection(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, - 1.5f));
+        DRPosition += this.gameObject.transform.TransformDirection(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
 
         Debug.Log(DRPosition.ToString());
 
-        DuplicatedRoot = Instantiate(this, DRPosition , DRRotation);
-        
+        DuplicatedRoot = Instantiate(this, DRPosition, DRRotation);
+
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;
         DuplicatedRoot.GetComponent<Rigidbody2D>().mass = 1;
@@ -71,11 +71,11 @@ public class RacineClicker : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(HasDuplicated == false)
+        if (HasDuplicated == false)
         {
             RootHp -= 1;
 
-            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255f /255f, 175f / 255f, (float)RootHp / (float)RootBaseHp);
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
             Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
 

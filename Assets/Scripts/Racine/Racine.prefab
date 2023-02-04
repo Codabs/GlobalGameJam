@@ -152,7 +152,7 @@ MonoBehaviour:
   MaxValue: 5
   AddedMaxValue: 0
   HasDuplicated: 0
-  Range: 50
+  Range: 45
   RandomValue: 0
   DRPosition: {x: 0, y: 0, z: 0}
   DRRotation: {x: 0, y: 0, z: 0, w: 0}
