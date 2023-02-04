@@ -86,13 +86,21 @@ Material:
     - _opacit__mask02: 0
     - _opacite_mask03: 1.04
     - _opacti__mask01: 0.77
+    - _rotation_ofset_mask01: 0
+    - _rotation_ofset_mask02: 0
+    - _rotation_ofset_mask03: 0
     - _saturation: 0.73
     - _seed: 6.92
     m_Colors:
     - _Mask01_color: {r: 0, g: 1, b: 0.78814816, a: 0}
     - _Mask02_color: {r: 0.1715565, g: 1, b: 0, a: 0}
     - _Ofset_mask01: {r: 0, g: 0, b: 0, a: 0}
+    - _Ofset_mask03: {r: 0, g: 0, b: 0, a: 0}
+    - _Ofset_mask2: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling_Mask01: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling_Mask02: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling_Mask03: {r: 0, g: 0, b: 0, a: 0}
+    - _inutile_color_aleatoire: {r: 0, g: 1, b: 0.8832712, a: 0}
     - _mask_color03: {r: 0.24905658, g: 1, b: 0.91165364, a: 0}
     - _mask_olor03: {r: 0, g: 1, b: 0.8832712, a: 0}
   m_BuildTextureStacks: []
