@@ -15,6 +15,9 @@ public class RacineClicker : MonoBehaviour
     public int Range;
     public float RandomValue;
     public Vector3 DRPosition;
+    public Quaternion DRRotation;
+
+    public Vector3 RemovedValue;
 
     public SpriteRenderer _SpriteRenderer;
     public RacineClicker DuplicatedRoot;
@@ -38,26 +41,32 @@ public class RacineClicker : MonoBehaviour
 
             this.gameObject.GetComponent<Rigidbody2D>().mass = 1000;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            RandomValue = Random.Range(-Range, Range);
+            RandomValue = Random.Range(0, Range);
             Duplicate();
-            RandomValue = -RandomValue; // chagner la ra ndom value pour etre toujours positive puis tjrs negative et refaire un roll pour etre plus de forme naturtelle
+            RandomValue = -RandomValue;
             Duplicate();
         }
     }
 
     public void Duplicate()
     {
-        DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
-        DuplicatedRoot = Instantiate(this, DRPosition, Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue));
+        DRRotation = Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue);
+        //DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
+
+        DRPosition += this.gameObject.transform.TransformDirection(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, - 1.5f));
+
+        Debug.Log(DRPosition.ToString());
+
+        DuplicatedRoot = Instantiate(this, DRPosition , DRRotation);
+        
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;
         DuplicatedRoot.GetComponent<Rigidbody2D>().mass = 1;
         DuplicatedRoot.HasDuplicated = false;
 
-        DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        //DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        Debug.Log(RandomValue);
-        Debug.Log(DRPosition);
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -68,12 +77,14 @@ public class RacineClicker : MonoBehaviour
 
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255f /255f, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
-
             Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
 
             if (RootHp <= 0)
             {
                 this.gameObject.GetComponent<RacineClicker>().enabled = false;
+
+               // Resize();
+                //Resize();
             }
 
             if (collision.gameObject.tag == "Wall")
@@ -81,5 +92,16 @@ public class RacineClicker : MonoBehaviour
                 this.gameObject.GetComponent<RacineClicker>().enabled = false;
             }
         }
+    }
+
+    public void Resize()
+    {
+        RemovedValue = new Vector3(this.gameObject.transform.localScale.x / 1.5f, this.gameObject.transform.localScale.y / 1.5f);
+
+        this.gameObject.transform.position += transform.TransformDirection(new Vector3(0, Mathf.Clamp((0.185f /RemovedValue.y), 0, 1.25f)));
+
+        this.gameObject.transform.localScale = RemovedValue;
+
+
     }
 }
