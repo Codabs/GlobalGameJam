@@ -9,12 +9,13 @@ using DG.Tweening;
 
 public class TestingTouchAsset : MonoBehaviour
 {
-    
+
     [SerializeField] private new Transform camera;
-    [SerializeField] private float movementPower = 5;
     [SerializeField] private PressGesture pressComponent;
     [SerializeField] private ReleaseGesture releaseComponent;
     private float lastPositionTap = 0;
+    private bool isTheInterfaceOn = false;
+
     private void OnEnable()
     {
         pressComponent.Pressed += pressHandler;
@@ -28,21 +29,22 @@ public class TestingTouchAsset : MonoBehaviour
     }
     private void pressHandler(object sender, EventArgs e)
     {
-        lastPositionTap = pressComponent.ScreenPosition.x;
+        lastPositionTap = pressComponent.ScreenPosition.y;
         print(lastPositionTap);
     }
     private void releasedHandeler(object sender, EventArgs e)
     {
-        print(releaseComponent.ScreenPosition.x);
-        if (lastPositionTap > releaseComponent.ScreenPosition.x)
+        print(releaseComponent.ScreenPosition.y);
+        if (lastPositionTap < releaseComponent.ScreenPosition.y && isTheInterfaceOn)
         {
-            print("testing");
-            camera.DOMoveX(-movementPower + camera.transform.position.x, 0.1f);
+            camera.DOLocalMoveY(-camera.position.y + 0.1f, 0.1f);
+            isTheInterfaceOn = false;
+
         }
-        else if (lastPositionTap < releaseComponent.ScreenPosition.x)
+        else if (lastPositionTap > releaseComponent.ScreenPosition.y && !isTheInterfaceOn)
         {
-            print("testing");
-            camera.DOMoveX(movementPower + camera.transform.position.x, 0.1f);
+            camera.DOLocalMoveY(camera.position.y + 0.1f, 0.1f);
+            isTheInterfaceOn = true;
         }
     }
 }
