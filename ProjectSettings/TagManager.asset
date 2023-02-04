@@ -54,3 +54,9 @@ TagManager:
   - name: foregroundFore
     uniqueID: 201195929
     locked: 0
+  - name: MainMenu
+    uniqueID: 3236725497
+    locked: 0
+  - name: SecondaryMenu
+    uniqueID: 1781317759
+    locked: 0
