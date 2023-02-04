@@ -87,7 +87,7 @@ Material:
     - _opacite_mask03: 1.04
     - _opacti__mask01: 0.77
     - _saturation: 0.73
-    - _seed: 13.14
+    - _seed: 1.4
     m_Colors:
     - _Mask01_color: {r: 0, g: 1, b: 0.78814816, a: 0}
     - _Mask02_color: {r: 0.1715565, g: 1, b: 0, a: 0}
