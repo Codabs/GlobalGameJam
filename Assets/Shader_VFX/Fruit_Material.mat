@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Color_swap 1
+  m_Name: Fruit_Material
   m_Shader: {fileID: -6465566751694194690, guid: 1f09ca93305a50e4da6e01e33afda2d6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -87,7 +87,7 @@ Material:
     - _opacite_mask03: 1.04
     - _opacti__mask01: 0.77
     - _saturation: 0.73
-    - _seed: 1.4
+    - _seed: 6.92
     m_Colors:
     - _Mask01_color: {r: 0, g: 1, b: 0.78814816, a: 0}
     - _Mask02_color: {r: 0.1715565, g: 1, b: 0, a: 0}
