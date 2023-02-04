@@ -41,7 +41,7 @@ Material:
     - _Magnification: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 0.1
+    - _Size: 0.01
     - _speed: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
