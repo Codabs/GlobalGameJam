@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2737032804284446807
+--- !u!114 &-2618144785432181362
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Color_swap 1
+  m_Name: Color_Swap
   m_Shader: {fileID: -6465566751694194690, guid: 1f09ca93305a50e4da6e01e33afda2d6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -34,31 +34,35 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Main_texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 13764791d4fabf54883b67d0de0119ca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask01:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c1eed18c1fdb8514f8f7e2edf4630593, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask02:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ded391fe411324848ae011d4a25e7411, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Objet01:
-        m_Texture: {fileID: 2800000, guid: f02a336134aa0354c935fab23588a604, type: 3}
+        m_Texture: {fileID: 2800000, guid: c1eed18c1fdb8514f8f7e2edf4630593, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Objet02:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ded391fe411324848ae011d4a25e7411, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Objet03:
-        m_Texture: {fileID: 2800000, guid: 423414e6a2ec3684ea116fe23a7a0ae3, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: ded391fe411324848ae011d4a25e7411, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_object:
-        m_Texture: {fileID: 2800000, guid: cebc62e7dac54f34d87270822eb42ddd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 13764791d4fabf54883b67d0de0119ca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mask03:
@@ -79,20 +83,34 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Couleur_Globale: 0
+    - _Couleur_Globale: -308.95
+    - _Hue: 59.8
+    - _Hue_main: 133.6
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _luminosite: 0.57
+    - _luminosite: 0.5
+    - _opacit: 1.88
     - _opacit__mask02: 0
-    - _opacite_mask03: 1.04
-    - _opacti__mask01: 0.77
-    - _saturation: 0.73
-    - _seed: 1.4
+    - _opacite_mask03: 0
+    - _opacti__mask01: 0
+    - _rotation_ofset_mask01: 0
+    - _rotation_ofset_mask02: 0
+    - _rotation_ofset_mask03: 0
+    - _saturation: 0.5
+    - _seed: 0
     m_Colors:
-    - _Mask01_color: {r: 0, g: 1, b: 0.78814816, a: 0}
-    - _Mask02_color: {r: 0.1715565, g: 1, b: 0, a: 0}
+    - _Color: {r: 1, g: 0, b: 0, a: 0}
+    - _Mask01_color: {r: 1, g: 0.65882355, b: 0, a: 0}
+    - _Mask02_color: {r: 0.7145834, g: 0, b: 1, a: 0}
     - _Ofset_mask01: {r: 0, g: 0, b: 0, a: 0}
+    - _Ofset_mask03: {r: 0, g: 0, b: 0, a: 0}
+    - _Ofset_mask2: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling_Mask01: {r: 0, g: 0, b: 0, a: 0}
-    - _mask_color03: {r: 0.24905658, g: 1, b: 0.91165364, a: 0}
+    - _Tiling_Mask02: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling_Mask03: {r: 0, g: 0, b: 0, a: 0}
+    - _inutile_color_aleatoire: {r: 0, g: 1, b: 0.8832712, a: 0}
+    - _mask_color03: {r: 0.0037735105, g: 1, b: 0.88279676, a: 0}
     - _mask_olor03: {r: 0, g: 1, b: 0.8832712, a: 0}
+    - _tiling: {r: 0, g: 0, b: 0, a: 0}
+    - _tiling_1: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
