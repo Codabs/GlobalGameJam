@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: ded391fe411324848ae011d4a25e7411, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture_object:
+        m_Texture: {fileID: 2800000, guid: 13764791d4fabf54883b67d0de0119ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _mask03:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -79,16 +83,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Couleur_Globale: -467.1
+    - _Couleur_Globale: 34.45
     - _Hue: 59.8
     - _Hue_main: 133.6
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _luminosite: 1.96
-    - _saturation: 0.11
+    - _luminosite: 0.5
+    - _opacit: 1.88
+    - _opacit__mask02: 0
+    - _opacite_mask03: 0
+    - _opacti__mask01: 0
+    - _saturation: 0.5
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 0}
-    - _Mask01_color: {r: 0, g: 0, b: 0, a: 0}
-    - _Mask02_color: {r: 0, g: 0, b: 0, a: 0}
+    - _Mask01_color: {r: 1, g: 0.65882355, b: 0, a: 0}
+    - _Mask02_color: {r: 0.7145834, g: 0, b: 1, a: 0}
+    - _mask_color03: {r: 0.0037735105, g: 1, b: 0.88279676, a: 0}
     - _mask_olor03: {r: 0, g: 1, b: 0.8832712, a: 0}
+    - _tiling: {r: 0, g: 0, b: 0, a: 0}
+    - _tiling_1: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
