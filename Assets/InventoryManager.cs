@@ -6,7 +6,7 @@ public class InventoryManager : Singleton<InventoryManager>
 {
 
     [SerializeField] private GameObject fruitPrefab;
-    [SerializeField] private List<Cell> cell;
+    public List<Cell> cell;
     [SerializeField] private List<Fruit> fruitList = new List<Fruit>();
     public void GainNewFruit()
     {

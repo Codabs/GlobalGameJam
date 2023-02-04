@@ -19,13 +19,19 @@ public class RacineClicker : MonoBehaviour
 
     public Vector3 RemovedValue;
 
+    public Sprite RacineSprite;
+    public Sprite EndOfRacineSprite;
+
     public SpriteRenderer _SpriteRenderer;
     public RacineClicker DuplicatedRoot;
+    public GameObject RacinesManager;
 
     public void Start()
     {
+        RacinesManager = GameObject.Find("RacinesManager");
         _SpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         RootHp = RootBaseHp;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = RacineSprite;
     }
 
     public void Update()
@@ -57,7 +63,7 @@ public class RacineClicker : MonoBehaviour
 
         Debug.Log(DRPosition.ToString());
 
-        DuplicatedRoot = Instantiate(this, DRPosition, DRRotation);
+        DuplicatedRoot = Instantiate(this, DRPosition, DRRotation, RacinesManager.transform);
 
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;
@@ -65,7 +71,6 @@ public class RacineClicker : MonoBehaviour
         DuplicatedRoot.HasDuplicated = false;
 
         DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
 
     }
 
@@ -84,7 +89,10 @@ public class RacineClicker : MonoBehaviour
                 this.gameObject.GetComponent<RacineClicker>().enabled = false;
 
                 Resize();
-                //Resize();
+
+                this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
+
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
             }
         }
 
