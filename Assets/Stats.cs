@@ -5,54 +5,83 @@ using UnityEngine;
 
 public class Stats : Singleton<Stats>
 {
-    public float resources1;
-    public void AddResources1(float _resources) => resources1 += _resources;
+    public float resources1 { get; private set; }
+    public float multip_Resources1;
+    public void AddResources1(float resources)
+    {
+        resources1 += resources * multip_Resources1;
+    }
 
-    public float resources2;
-    public void AddResources2(float _resources) => resources2 += _resources;
+    public float resources2 { get; private set; }
+    public float multip_Resources2;
+    public void AddResources2(float resources)
+    {
+        resources2 += resources * multip_Resources2;
+    }
 
-    public float damage_Click;
-    public void AddDamageOnClick(float damage) => damage_Click += damage;
+    public float real_Damage_Click 
+    { 
+        get { return real_Damage_Click; } 
+        private set { value = multip_Damage_Click * brut_Damage_Click; } 
+    }
+    public float multip_Damage_Click;
+    public float brut_Damage_Click;
 
+    public float real_Resources_Click
+    {
+        get { return real_Resources_Click; }
+        private set { value = multip_Resources_Click * brut_Resources_Click; }
+    }
+    public float multip_Resources_Click;
+    public float brut_Resources_Click;
 
-    public float resources_Click;
-    public void AddresourcesOnClick(float resources) => resources_Click += resources;
+    public float real_Damage_Auto
+    {
+        get { return real_Damage_Auto; }
+        private set { value = multip_Damage_Auto * brut_Damage_Auto; }
+    }
+    public float multip_Damage_Auto;
+    public float brut_Damage_Auto;
 
+    public float real_Resources_Auto
+    {
+        get { return real_Resources_Auto; }
+        private set { value = multip_Resources_Auto * multip_Resources_Auto; }
+    }
+    public float multip_Resources_Auto;
+    public float brut_Resources_Auto;
 
-    public float damage_Auto;
-    public void AddDamageAuto(float damage) => damage_Auto += damage;
+    public float real_Frequence_Auto
+    {
+        get { return real_Frequence_Auto; }
+        private set { value = multip_Frequence_Auto * brut_Frequence_Auto; }
+    }
+    public float multip_Frequence_Auto;
+    public float brut_Frequence_Auto;
 
+    public int real_Nb_Branche
+    {
+        get { return real_Nb_Branche; }
+        private set { value = Mathf.CeilToInt(multip_Nb_Branche * brut_Nb_Branche); }
+    }
+    public float multip_Nb_Branche;
+    public float brut_Nb_Branche;
 
-    public float resources_Auto;
-    public void AddresourcesAuto(float resources) => resources_Auto += resources;
+    public float real_Critique_Percent;
 
-
-    public float Frequence_Auto;
-    public void AddFrequenceAuto(float frequence) => Frequence_Auto += frequence;
-
-
-    public int nb_branche;
-    public void AddNbBranche(int nb) => nb_branche += nb;
-
-
-    public float critique_percent;
-    public void Addcritique(float percent) => critique_percent += percent;
-
-    public float damage_critique;
-
-    /// <summary>
-    /// the var damage_critique is a multiply.
-    /// </summary>
-    /// <param name="damage"></param>
-    public void AddDamage(float damage) => damage_critique += damage;
+    public float critique_Damage_Multiplicative;
 
     // public float GetGlobalDamageAuto() { }
 
     public float Upgrade_reduction;
-    public void AddReduction(float reduction) => Upgrade_reduction += reduction;
 
     // public script_de_l'upgrade ICI
 
-    public float H2O;
-    public void AddH2O(float h2o) => H2O += h2o;
+    public float real_H2O
+    {
+        get { return real_H2O; }
+        private set { value = multip_H2O * brut_H2O; }
+    }
+    public float multip_H2O;
+    public float brut_H2O;
 }
