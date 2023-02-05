@@ -5,8 +5,22 @@ using UnityEngine;
 
 public class Stats : Singleton<Stats>
 {
-    public int level_tree1 { get; private set; }
-    public void AddLevelTree() { if (level_tree1 < 4) level_tree1 += 1; }
+    private void Awake()
+    {
+        if (level_tree1 == 0)
+        {
+            AddLevelTree();
+        }
+    }
+
+    public bool arbre;
+
+    public int level_tree1 { get; private set; } = 0;
+    public void AddLevelTree() { 
+        if (level_tree1 < 4) level_tree1 += 1;
+        ArbreManager.Instance.SetLevel(level_tree1);
+        explosc.Instance.lvlup();
+    }
 
     [SerializeField] private float _resources1;
     public float resources1 

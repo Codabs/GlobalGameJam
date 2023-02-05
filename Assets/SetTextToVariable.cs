@@ -6,9 +6,13 @@ using TMPro;
 
 public class SetTextToVariable : MonoBehaviour
 {
+    public bool a;
     [SerializeField] private TextMeshProUGUI text;
     private void Update()
     {
-        text.text = Stats.Instance.resources1.ToString();
+        if (a)
+            text.text = Stats.Instance.resources1.ToString();
+        else
+            text.text = Stats.Instance.resources2.ToString();
     }
 }
