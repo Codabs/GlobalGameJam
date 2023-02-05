@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Stats : Singleton<Stats>
 {
+    public int level_tree1 { get; private set; }
+    public void AddLevelTree() { if (level_tree1 < 4) level_tree1 += 1; }
+
     public float resources1 { get; private set; }
     public float multip_Resources1;
     public void AddResources1(float resources)
@@ -22,7 +25,7 @@ public class Stats : Singleton<Stats>
     public float real_Damage_Click 
     { 
         get { return real_Damage_Click; } 
-        private set { value = multip_Damage_Click * brut_Damage_Click; } 
+        private set { real_Damage_Click = multip_Damage_Click * brut_Damage_Click; } 
     }
     public float multip_Damage_Click;
     public float brut_Damage_Click;
@@ -30,7 +33,7 @@ public class Stats : Singleton<Stats>
     public float real_Resources_Click
     {
         get { return real_Resources_Click; }
-        private set { value = multip_Resources_Click * brut_Resources_Click; }
+        private set { real_Resources_Click = multip_Resources_Click * brut_Resources_Click; }
     }
     public float multip_Resources_Click;
     public float brut_Resources_Click;
@@ -38,7 +41,7 @@ public class Stats : Singleton<Stats>
     public float real_Damage_Auto
     {
         get { return real_Damage_Auto; }
-        private set { value = multip_Damage_Auto * brut_Damage_Auto; }
+        private set { real_Damage_Auto = multip_Damage_Auto * brut_Damage_Auto; }
     }
     public float multip_Damage_Auto;
     public float brut_Damage_Auto;
@@ -46,7 +49,7 @@ public class Stats : Singleton<Stats>
     public float real_Resources_Auto
     {
         get { return real_Resources_Auto; }
-        private set { value = multip_Resources_Auto * multip_Resources_Auto; }
+        private set { real_Resources_Auto = multip_Resources_Auto * multip_Resources_Auto; }
     }
     public float multip_Resources_Auto;
     public float brut_Resources_Auto;
@@ -54,7 +57,7 @@ public class Stats : Singleton<Stats>
     public float real_Frequence_Auto
     {
         get { return real_Frequence_Auto; }
-        private set { value = multip_Frequence_Auto * brut_Frequence_Auto; }
+        private set { real_Frequence_Auto = multip_Frequence_Auto * brut_Frequence_Auto; }
     }
     public float multip_Frequence_Auto;
     public float brut_Frequence_Auto;
@@ -62,7 +65,7 @@ public class Stats : Singleton<Stats>
     public int real_Nb_Branche
     {
         get { return real_Nb_Branche; }
-        private set { value = Mathf.CeilToInt(multip_Nb_Branche * brut_Nb_Branche); }
+        private set { real_Nb_Branche = Mathf.CeilToInt(multip_Nb_Branche * brut_Nb_Branche); }
     }
     public float multip_Nb_Branche;
     public float brut_Nb_Branche;
@@ -73,7 +76,14 @@ public class Stats : Singleton<Stats>
 
     // public float GetGlobalDamageAuto() { }
 
-    public float Upgrade_reduction;
+    /// <summary>
+    /// Only 1 to 0.75
+    /// </summary>
+    public float Upgrade_reduction 
+    { 
+        get { return Upgrade_reduction; }
+        set { Upgrade_reduction = Mathf.Clamp(value, 0.75f, 1f); }
+    }
 
     // public script_de_l'upgrade ICI
 
