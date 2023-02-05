@@ -34,6 +34,10 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Cinemachine
     - DOTween.Modules
+    - FMODUnity
+    - FMODUnityEditor
+    - FMODUnityResonance
+    - FMODUnityResonanceEditor
     - PPv2URPConverters
     - PsdPlugin
     showAdvancedSettings: 0

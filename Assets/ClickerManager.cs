@@ -6,7 +6,7 @@ using TouchScript.Gestures;
 using TouchScript.Hit;
 using System;
 using DG.Tweening;
-
+using FMOD;
 
 public class ClickerManager : MonoBehaviour
 {
@@ -50,6 +50,7 @@ public class ClickerManager : MonoBehaviour
         {
             if(racine.TryGetComponent<RacineClicker>(out RacineClicker root))
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ClickDirt");
                 root.Value += damage;
                 material.CollectMaterials();
             }

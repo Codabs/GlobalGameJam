@@ -1,0 +1,345 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9171457408602447811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FastScrolling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FastScrolling
+  Guid:
+    Data1: 732443612
+    Data2: 1276136043
+    Data3: -1098483535
+    Data4: 504052724
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8415368022347657333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/GGJ2023_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638112005424200248
+  FileSizes:
+  - Name: Desktop
+    Value: 1395808
+  Exists: 1
+--- !u!114 &-6667218533000428864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/OpenUI
+  m_EditorClassIdentifier: 
+  Path: event:/UI/OpenUI
+  Guid:
+    Data1: 1026146118
+    Data2: 1260368253
+    Data3: 1675388841
+    Data4: 1429812320
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3712771527649858482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/Main Music
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Main Music
+  Guid:
+    Data1: 207013770
+    Data2: 1238724746
+    Data3: -203070553
+    Data4: 1885190427
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51226
+--- !u!114 &-2135502029426384582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RootsInDirt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RootsInDirt
+  Guid:
+    Data1: 2041143732
+    Data2: 1274701668
+    Data3: -959041356
+    Data4: -323597358
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9090
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4726190800517818202}
+  - {fileID: -8415368022347657333}
+  EditorEvents:
+  - {fileID: 893429030285604538}
+  - {fileID: 3257352289605956419}
+  - {fileID: 4710716085342901260}
+  - {fileID: -6667218533000428864}
+  - {fileID: 8670651655952022809}
+  - {fileID: -3712771527649858482}
+  - {fileID: -2135502029426384582}
+  - {fileID: -9171457408602447811}
+  - {fileID: 5360416238635343037}
+  - {fileID: 7087428070321937599}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8415368022347657333}
+  StringsBanks:
+  - {fileID: 4726190800517818202}
+  cacheTime: 638112005424210221
+  cacheVersion: 131601
+--- !u!114 &893429030285604538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Wind
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Wind
+  Guid:
+    Data1: 1928757770
+    Data2: 1180540738
+    Data3: -458156103
+    Data4: 1625288457
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 26500
+--- !u!114 &3257352289605956419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Upgrade
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Upgrade
+  Guid:
+    Data1: -561786349
+    Data2: 1340008278
+    Data3: -276548190
+    Data4: -1835950472
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4710716085342901260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/StoneHugeNoise
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/StoneHugeNoise
+  Guid:
+    Data1: -2147380948
+    Data2: 1176609658
+    Data3: -563945540
+    Data4: 27887400
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4726190800517818202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/GGJ2023_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638112005424210221
+  FileSizes:
+  - Name: Desktop
+    Value: 1184
+  Exists: 1
+--- !u!114 &5360416238635343037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RockHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RockHit
+  Guid:
+    Data1: -379283735
+    Data2: 1167030161
+    Data3: -240447061
+    Data4: 861127629
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1625
+--- !u!114 &7087428070321937599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/CloseUI
+  m_EditorClassIdentifier: 
+  Path: event:/UI/CloseUI
+  Guid:
+    Data1: -631432451
+    Data2: 1249875776
+    Data3: -2062300500
+    Data4: 816599303
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8670651655952022809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RootsInStone
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RootsInStone
+  Guid:
+    Data1: 275581518
+    Data2: 1090635701
+    Data3: -161808472
+    Data4: -175327452
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2280
