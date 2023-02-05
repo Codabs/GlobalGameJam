@@ -44,6 +44,7 @@ public class ClickerManager : MonoBehaviour
     {
         print("click");
         int damage = Mathf.RoundToInt(Stats.Instance.real_Damage_Click);
+        print(damage);
         if (IsThisHitACritical()) damage = damage * Mathf.RoundToInt(Stats.Instance.critique_Damage_Multiplicative);
         if ( Stats.Instance.arbre)
             Stats.Instance.AddResources1(Stats.Instance.real_Resources_Click);

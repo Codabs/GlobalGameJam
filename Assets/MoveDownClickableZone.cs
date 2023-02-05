@@ -34,12 +34,6 @@ public class MoveDownClickableZone : MonoBehaviour
             camera1.GetComponent<CameraArrowsMovement>().MovingTheCameraYToARectTransform(cameraEndPoint);
 
             background.NewBackground();
-            //adding ressource
-            if (!IsSecondTree) 
-            { 
-                Stats.Instance.AddResources1(baseRessourcesGagne); 
-            }
-            else Stats.Instance.AddResources2(baseRessourcesGagne);
 
             StartCoroutine(enumerator());
         }

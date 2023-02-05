@@ -15,7 +15,7 @@ public class Stats : Singleton<Stats>
 
     public bool arbre;
 
-    public int level_tree1 { get; private set; } = 0;
+    public int level_tree1 = 0;
     public void AddLevelTree() { 
         if (level_tree1 < 4) level_tree1 += 1;
         ArbreManager.Instance.SetLevel(level_tree1);

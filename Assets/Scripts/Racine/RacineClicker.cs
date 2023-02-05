@@ -69,10 +69,9 @@ public class RacineClicker : MonoBehaviour
 
         if (RacinesInPalier == RacinesNeededForNextPalier)
         {
-            Value -= MaxValue * Time.deltaTime / 4;
-
             if(Value > 0)
             {
+                Value -= MaxValue * Time.deltaTime / 4;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RockHit");
             }
         }
@@ -157,6 +156,8 @@ public class RacineClicker : MonoBehaviour
                 this.gameObject.GetComponent<RacineClicker>().enabled = false;
 
                 this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                this.gameObject.GetComponent<Rigidbody2D>().Sleep();
             }
         }
 
