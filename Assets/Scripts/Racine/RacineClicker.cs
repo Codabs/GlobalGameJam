@@ -62,6 +62,10 @@ public class RacineClicker : MonoBehaviour
             Value += 1;
         }*/
 
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(128f / 255f + (Value / MaxValue) /2, 128f / 255f + (Value / MaxValue) /2, 128f / 255f + (Value / MaxValue) /2);
+
+
+
         if (RacinesInPalier == RacinesNeededForNextPalier)
         {
             Value -= MaxValue * Time.deltaTime / 4;
