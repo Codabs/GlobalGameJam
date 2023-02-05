@@ -36,18 +36,19 @@ public class RacineClicker : MonoBehaviour
 
     public void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             Value += 1;
-        }
+        }*/
 
         if (Value >= MaxValue && HasDuplicated == false)
         {
             HasDuplicated = true;
-
+            MoveDownClickableZone.Instance.MoveDown();
             this.gameObject.GetComponent<Rigidbody2D>().mass = 1000;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            RandomValue = Random.Range(Range/10, Range);
+            RandomValue = UnityEngine.Random.Range(Range/10, Range);
             Duplicate();
             RandomValue = -RandomValue;
             Duplicate();
@@ -59,11 +60,12 @@ public class RacineClicker : MonoBehaviour
         DRRotation = Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue);
         //DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
 
-        DRPosition += this.gameObject.transform.TransformDirection(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
+        DRPosition += /*this.gameObject.transform.TransformDirection*/(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
 
         Debug.Log(DRPosition.ToString());
 
         DuplicatedRoot = Instantiate(this, DRPosition, DRRotation, RacinesManager.transform);
+        DuplicatedRoot.transform.localPosition = DRPosition;
 
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;

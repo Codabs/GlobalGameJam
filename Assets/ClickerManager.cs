@@ -12,7 +12,7 @@ public class ClickerManager : MonoBehaviour
 {
     [SerializeField] private PressGesture pressComponent;
     public RaycastIfPlayerCanClick raycast;
-
+    public Transform racineClicker;
     private void OnEnable()
     {
         pressComponent.Pressed += pressHandler;
@@ -24,6 +24,20 @@ public class ClickerManager : MonoBehaviour
     }
     private void pressHandler(object sender, EventArgs e)
     {
-        raycast.StartRaycast();
+        raycast.StartRaycast(Input.mousePosition);
+    }
+    public void Click()
+    {
+        print("click");
+        foreach(Transform racine in racineClicker)
+        {
+            if(racine.TryGetComponent<RacineClicker>(out RacineClicker root))
+            {
+                root.Value++;
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
     }
 }
