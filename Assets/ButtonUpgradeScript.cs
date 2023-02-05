@@ -81,8 +81,8 @@ public class ButtonUpgradeScript : MonoBehaviour
         realRessource1ForUpgrade = Mathf.FloorToInt(realRessource1ForUpgrade + brutCost);
         brutRessource1ForUpgrade = Mathf.FloorToInt(realRessource1ForUpgrade * _stats.Upgrade_reduction);
 
-        if (levelOfUpgrade < 100) return;
-        realRessource2ForUpgrade = Mathf.FloorToInt(realRessource2ForUpgrade + (brutCost/1000));
+        if (levelOfUpgrade < 10) return;
+        realRessource2ForUpgrade = Mathf.FloorToInt(realRessource2ForUpgrade + (brutCost/10));
         brutRessource2ForUpgrade = Mathf.FloorToInt(realRessource2ForUpgrade * _stats.Upgrade_reduction);
     }
     public void Buy()

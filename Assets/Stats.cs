@@ -31,7 +31,7 @@ public class Stats : Singleton<Stats>
     public float multip_Resources1;
     public void AddResources1(float resources)
     {
-        resources1 += resources * multip_Resources1;
+        resources1 += resources * multip_Resources1 * real_Resources_Click;
     }
 
     [SerializeField] private float _resources2;
@@ -43,7 +43,7 @@ public class Stats : Singleton<Stats>
     public float multip_Resources2;
     public void AddResources2(float resources)
     {
-        resources2 += resources * multip_Resources2;
+        resources2 += resources * multip_Resources2 * real_Resources_Click;
     }
 
     [SerializeField] private float _real_Damage_Click;
