@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: oxygen
+    uniqueID: 689538923
+    locked: 0
+  - name: Wind
+    uniqueID: 2366159759
+    locked: 0
   - name: BackgroundBack
     uniqueID: 886856389
     locked: 0
@@ -59,6 +65,9 @@ TagManager:
     locked: 0
   - name: foregroundFore
     uniqueID: 201195929
+    locked: 0
+  - name: Mine
+    uniqueID: 653029001
     locked: 0
   - name: MainMenu
     uniqueID: 3236725497
