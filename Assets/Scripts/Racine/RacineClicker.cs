@@ -36,21 +36,23 @@ public class RacineClicker : MonoBehaviour
 
     public void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             Value += 1;
-        }
+        }*/
 
         if (Value >= MaxValue && HasDuplicated == false)
         {
             HasDuplicated = true;
-
+            MoveDownClickableZone.Instance.MoveDown();
             this.gameObject.GetComponent<Rigidbody2D>().mass = 1000;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             RandomValue = Random.Range(Range/10, Range);
             Duplicate();
             RandomValue = -RandomValue;
             Duplicate();
+            this.gameObject.GetComponent<RacineClicker>().enabled = false;
         }
     }
 
@@ -59,11 +61,12 @@ public class RacineClicker : MonoBehaviour
         DRRotation = Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue);
         //DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
 
-        DRPosition += this.gameObject.transform.TransformDirection(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
+        DRPosition += /*this.gameObject.transform.TransformDirection*/(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
 
         Debug.Log(DRPosition.ToString());
 
         DuplicatedRoot = Instantiate(this, DRPosition, DRRotation, RacinesManager.transform);
+        DuplicatedRoot.transform.localPosition = DRPosition;
 
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;
@@ -71,7 +74,6 @@ public class RacineClicker : MonoBehaviour
         DuplicatedRoot.HasDuplicated = false;
 
         DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -86,13 +88,13 @@ public class RacineClicker : MonoBehaviour
 
             if (RootHp <= 0)
             {
-                this.gameObject.GetComponent<RacineClicker>().enabled = false;
-
                 Resize();
 
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
+
+                this.gameObject.GetComponent<RacineClicker>().enabled = false;
             }
         }
 
