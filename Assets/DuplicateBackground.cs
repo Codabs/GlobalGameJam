@@ -7,7 +7,7 @@ public class DuplicateBackground : MonoBehaviour
     public static DuplicateBackground Instance = null;
     public Vector3 moveForce = Vector3.zero;
     private Vector3 value = Vector3.zero;
-    [SerializeField] GameObject prefab;
+    [SerializeField] List<GameObject> prefab;
     private void Awake()
     {
         if (Instance == null)
@@ -17,7 +17,7 @@ public class DuplicateBackground : MonoBehaviour
     public void NewBackground()
     {
         value += moveForce;
-        Transform t = GameObject.Instantiate(prefab, transform).transform;
+        Transform t = GameObject.Instantiate(prefab[Random.Range(0, prefab.Count )], transform).transform;
         t.localPosition = value;
         t.localScale = Vector3.one;
     }
