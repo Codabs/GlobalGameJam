@@ -90,44 +90,49 @@ public class ButtonUpgradeScript : MonoBehaviour
         switch (whattype)
         {
             case what.dmg_click:
-                _stats.brut_Damage_Click += multiplicateurPwrUp;
+                _stats.brut_Damage_Click += 1;
+                _stats.brut_Damage_Click *= multiplicateurPwrUp;
                 _stats.AddResources1(-realRessource1ForUpgrade);
                 _stats.AddResources2(-realRessource2ForUpgrade);
                 UpThePrice();
                 levelOfUpgrade++;
-                text.text = $" Clic power up \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
+                text.text = $" Clic power up + {_stats.brut_Damage_Click *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             case what.rs_click:
-                _stats.brut_Resources_Click += multiplicateurPwrUp;
+                _stats.brut_Resources_Click += 1;
+                _stats.brut_Resources_Click *= multiplicateurPwrUp;
                 _stats.AddResources1(-realRessource1ForUpgrade);
                 _stats.AddResources2(-realRessource2ForUpgrade);
                 UpThePrice();
                 levelOfUpgrade++;
-                text.text = $" Clic resource up \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
+                text.text = $" Clic resource up + {_stats.brut_Resources_Click *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             case what.frq_auto:
-                _stats.brut_Frequence_Auto += multiplicateurPwrUp;
+                _stats.brut_Frequence_Auto += 1;
+                _stats.brut_Frequence_Auto *= multiplicateurPwrUp;
                 _stats.AddResources1(-realRessource1ForUpgrade);
                 _stats.AddResources2(-realRessource2ForUpgrade);
                 UpThePrice();
                 levelOfUpgrade++;
-                text.text = $" Autoclick frequency up \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
+                text.text = $" Autoclick frequency up + {_stats.brut_Frequence_Auto *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             case what.dmg_auto:
-                _stats.brut_Damage_Auto += multiplicateurPwrUp;
+                _stats.brut_Damage_Auto += 1;
+                _stats.brut_Damage_Auto *= multiplicateurPwrUp;
                 _stats.AddResources1(-realRessource1ForUpgrade);
                 _stats.AddResources2(-realRessource2ForUpgrade);
                 UpThePrice();
                 levelOfUpgrade++;
-                text.text = $" Autoclick power up \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
+                text.text = $" Autoclick power up + {_stats.brut_Damage_Auto *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             case what.rs_auto:
-                _stats.brut_Resources_Auto += multiplicateurPwrUp;
+                _stats.brut_Resources_Auto += 1;
+                _stats.brut_Resources_Auto *= multiplicateurPwrUp;
                 _stats.AddResources1(-realRessource1ForUpgrade);
                 _stats.AddResources2(-realRessource2ForUpgrade);
                 UpThePrice();
                 levelOfUpgrade++;
-                text.text = $" Autoclick resource up \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
+                text.text = $" Autoclick resource up + {_stats.brut_Resources_Auto *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             default:
                 Debug.LogError("PTDR T NUL");
