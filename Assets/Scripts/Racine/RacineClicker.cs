@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
+using FMOD;
 
 public class RacineClicker : MonoBehaviour
 {
@@ -69,6 +70,11 @@ public class RacineClicker : MonoBehaviour
         if (RacinesInPalier == RacinesNeededForNextPalier)
         {
             Value -= MaxValue * Time.deltaTime / 4;
+
+            if(Value > 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RockHit");
+            }
         }
 
         if (Value >= MaxValue && HasDuplicated == false)
@@ -82,6 +88,8 @@ public class RacineClicker : MonoBehaviour
             RandomValue = -RandomValue;
             Duplicate();
             this.gameObject.GetComponent<RacineClicker>().enabled = false;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RootsInDirt");
         }
     }
 
@@ -92,18 +100,20 @@ public class RacineClicker : MonoBehaviour
 
         DRPosition += /*this.gameObject.transform.TransformDirection*/(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1f));
 
-        Debug.Log(DRPosition.ToString());
+        UnityEngine.Debug.Log(DRPosition.ToString());
 
         DuplicatedRoot = Instantiate(this, DRPosition, DRRotation, RacinesManager.transform);
         DuplicatedRoot.transform.localPosition = DRPosition;
 
         DuplicatedRoot.Value = 0;
         DuplicatedRoot.RacinesInPalier += 1;
+
         if(RacinesInPalier >= RacinesNeededForNextPalier)
         {
             DuplicatedRoot.MaxValue = MaxValue * AddedMaxValue;
             DuplicatedRoot.Palier += 1;
             DuplicatedRoot.RacinesInPalier = 0;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/StoneHugeNoise");
         }
 
 

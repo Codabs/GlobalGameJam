@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using FMOD;
 public class CameraArrowsMovement : MonoBehaviour
 {
     bool canIMoveThePointDown = true;
     [SerializeField] private Transform endPoint;
     public void MovingTheCameraYToARectTransform(Transform point)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/FastScrolling");
         transform.DOMove(new(transform.position.x, point.position.y, transform.position.z), 0.3f);
     }
     public void MovingSecondTree()

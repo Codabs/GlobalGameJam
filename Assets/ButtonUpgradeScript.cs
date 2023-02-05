@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-
+using FMOD;
 public class ButtonUpgradeScript : MonoBehaviour
 {
     private Stats _stats;
@@ -87,6 +87,7 @@ public class ButtonUpgradeScript : MonoBehaviour
     }
     public void Buy()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Upgrade");
         switch (whattype)
         {
             case what.dmg_click:
@@ -135,7 +136,7 @@ public class ButtonUpgradeScript : MonoBehaviour
                 text.text = $" Autoclick resource up + {_stats.brut_Resources_Auto *= multiplicateurPwrUp} \n minerals 1 cost : {realRessource1ForUpgrade} \n minerals 2 cost : {realRessource2ForUpgrade} ";
                 break;
             default:
-                Debug.LogError("PTDR T NUL");
+                UnityEngine.Debug.LogError("PTDR T NUL");
                 break;
         }
     }

@@ -6,7 +6,7 @@ using TouchScript.Gestures;
 using TouchScript.Hit;
 using System;
 using DG.Tweening;
-
+using FMOD;
 
 public class ClickerManager : MonoBehaviour
 {
@@ -45,11 +45,15 @@ public class ClickerManager : MonoBehaviour
         print("click");
         int damage = Mathf.RoundToInt(Stats.Instance.real_Damage_Click);
         if (IsThisHitACritical()) damage = damage * Mathf.RoundToInt(Stats.Instance.critique_Damage_Multiplicative);
-        Stats.Instance.AddResources1(Stats.Instance.real_Resources_Click);
+        if ( Stats.Instance.arbre)
+            Stats.Instance.AddResources1(Stats.Instance.real_Resources_Click);
+        else
+            Stats.Instance.AddResources2(Stats.Instance.real_Resources_Click);
         foreach (Transform racine in racineClicker)
         {
             if(racine.TryGetComponent<RacineClicker>(out RacineClicker root))
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/ClickDirt");
                 root.Value += damage;
                 material.CollectMaterials();
             }
