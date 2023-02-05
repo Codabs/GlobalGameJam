@@ -13,6 +13,7 @@ public class ClickerManager : MonoBehaviour
     [SerializeField] private PressGesture pressComponent;
     public RaycastIfPlayerCanClick raycast;
     public Transform racineClicker;
+    public MaterialManager material;
     private void OnEnable()
     {
         pressComponent.Pressed += pressHandler;
@@ -34,6 +35,7 @@ public class ClickerManager : MonoBehaviour
             if(racine.TryGetComponent<RacineClicker>(out RacineClicker root))
             {
                 root.Value++;
+                material.CollectMaterials();
             }
         }
     }

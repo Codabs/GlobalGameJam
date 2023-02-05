@@ -48,7 +48,7 @@ public class RacineClicker : MonoBehaviour
             MoveDownClickableZone.Instance.MoveDown();
             this.gameObject.GetComponent<Rigidbody2D>().mass = 1000;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            RandomValue = UnityEngine.Random.Range(Range/10, Range);
+            RandomValue = Random.Range(Range/10, Range);
             Duplicate();
             RandomValue = -RandomValue;
             Duplicate();
@@ -73,7 +73,7 @@ public class RacineClicker : MonoBehaviour
         DuplicatedRoot.HasDuplicated = false;
 
         DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+        this.gameObject.GetComponent<RacineClicker>().enabled = false;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -88,13 +88,13 @@ public class RacineClicker : MonoBehaviour
 
             if (RootHp <= 0)
             {
-                this.gameObject.GetComponent<RacineClicker>().enabled = false;
-
                 Resize();
 
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
+
+                this.gameObject.GetComponent<RacineClicker>().enabled = false;
             }
         }
 
