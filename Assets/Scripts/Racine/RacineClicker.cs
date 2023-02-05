@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class RacineClicker : MonoBehaviour
@@ -82,7 +81,7 @@ public class RacineClicker : MonoBehaviour
         {
             RootHp -= 1;
 
-            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 175f / 255f, (float)RootHp / (float)RootBaseHp);
+            //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255f / 255f, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
             Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
 
@@ -90,7 +89,7 @@ public class RacineClicker : MonoBehaviour
             {
                 Resize();
 
-                this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
+                //this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
 
