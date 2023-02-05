@@ -11,7 +11,31 @@ public class MaterialManager : MonoBehaviour
     public int RacinesNeededForNextPalier;
     public int RacinesInPalier;
     public int Palier;
+    private int i = 0;
 
+    public void Update()
+    {
+        if(Palier == 1 && i == 0)
+        {
+            Stats.Instance.AddLevelTree();
+            i++;
+        }
+        if (Palier == 2 && i == 1)
+        {
+            Stats.Instance.AddLevelTree();
+            i++;
+        }
+        if (Palier == 4 && i == 2)
+        {
+            Stats.Instance.AddLevelTree();
+            i++;
+        }
+        if (Palier == 6 && i == 3)
+        {
+            Stats.Instance.AddLevelTree();
+            i++;
+        }
+    }
     /*public void Update()
     {
         if (Input.GetMouseButtonDown(0))

@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/GGJ2023_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638112005424200248
+  lastModified: 638112094376138709
   FileSizes:
   - Name: Desktop
-    Value: 1395808
+    Value: 1408448
   Exists: 1
 --- !u!114 &-6667218533000428864
 MonoBehaviour:
@@ -154,12 +154,13 @@ MonoBehaviour:
   - {fileID: -9171457408602447811}
   - {fileID: 5360416238635343037}
   - {fileID: 7087428070321937599}
+  - {fileID: 6774570027715965888}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8415368022347657333}
   StringsBanks:
   - {fileID: 4726190800517818202}
-  cacheTime: 638112005424210221
+  cacheTime: 638112094376158550
   cacheVersion: 131601
 --- !u!114 &893429030285604538
 MonoBehaviour:
@@ -257,10 +258,10 @@ MonoBehaviour:
   Path: Assets/GGJ2023_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638112005424210221
+  lastModified: 638112094376158550
   FileSizes:
   - Name: Desktop
-    Value: 1184
+    Value: 1224
   Exists: 1
 --- !u!114 &5360416238635343037
 MonoBehaviour:
@@ -289,6 +290,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1625
+--- !u!114 &6774570027715965888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ClickDirt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ClickDirt
+  Guid:
+    Data1: 1272931995
+    Data2: 1105090002
+    Data3: -906498674
+    Data4: -900228402
+  Banks:
+  - {fileID: -8415368022347657333}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7087428070321937599
 MonoBehaviour:
   m_ObjectHideFlags: 0
