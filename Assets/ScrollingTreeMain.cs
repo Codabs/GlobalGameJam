@@ -15,8 +15,8 @@ public class ScrollingTreeMain : MonoBehaviour
     [SerializeField] private ReleaseGesture releaseComponent;
     private float lastPositionTap = 0;
     private bool isScreenPress = false;
-    [SerializeField] private float minObjectMovement;
-    [SerializeField] private float maxObjectMovement;
+    [SerializeField] private Transform minObjectMovement;
+    [SerializeField] private Transform maxObjectMovement;
 
     private void OnEnable()
     {
@@ -31,7 +31,8 @@ public class ScrollingTreeMain : MonoBehaviour
             float velocity = lastPositionTap - cursorPosition;
             lastPositionTap = Input.mousePosition.y;
             float vector3 = objectMovement.position.y + velocity * scrollSpeed;
-            objectMovement.position = new Vector3(objectMovement.position.x,Mathf.Clamp(vector3, minObjectMovement, maxObjectMovement), objectMovement.position.z);
+            print(minObjectMovement.position.y);
+            objectMovement.position = new Vector3(objectMovement.position.x,Mathf.Clamp(vector3, minObjectMovement.position.y, maxObjectMovement.position.y), objectMovement.position.z);
         }
     }
     private void OnDisable()

@@ -30,16 +30,25 @@ public class ClickerManager : MonoBehaviour
     public void Click()
     {
         print("click");
-        foreach(Transform racine in racineClicker)
+        int damage = Mathf.RoundToInt(Stats.Instance.real_Damage_Click);
+        if (IsThisHitACritical()) damage = damage * Mathf.RoundToInt(Stats.Instance.critique_Damage_Multiplicative);
+        foreach (Transform racine in racineClicker)
         {
             if(racine.TryGetComponent<RacineClicker>(out RacineClicker root))
             {
-                root.Value++;
+                root.Value += damage;
                 material.CollectMaterials();
             }
         }
+
     }
-    private void OnDrawGizmos()
+    private bool IsThisHitACritical()
     {
+        if(UnityEngine.Random.Range(0, 100) < Stats.Instance.real_Critique_Percent)
+        {
+            print("CRITIQUE");
+            return true;
+        }
+        return false;
     }
 }

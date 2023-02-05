@@ -35,10 +35,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_externals/TouchScript/Examples/Taps/Taps.unity
     guid: 5013fa58cea314376b273bd8905581f4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LouisScene.unity
     guid: 073b2a926352eed429764c214fcf8f00
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
