@@ -52,6 +52,7 @@ public class RacineClicker : MonoBehaviour
             Duplicate();
             RandomValue = -RandomValue;
             Duplicate();
+            this.gameObject.GetComponent<RacineClicker>().enabled = false;
         }
     }
 
@@ -73,7 +74,6 @@ public class RacineClicker : MonoBehaviour
         DuplicatedRoot.HasDuplicated = false;
 
         DuplicatedRoot.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        this.gameObject.GetComponent<RacineClicker>().enabled = false;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
