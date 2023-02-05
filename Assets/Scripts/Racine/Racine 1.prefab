@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1931708449616526121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9286a8dd6084ab4499c693f49e8c64b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7284d3f75b7773f4cbfbc44ddeb3e8c4, type: 3}
   m_Color: {r: 1, g: 0.6862745, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,14 +104,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.75, y: 6.75}
+    oldSize: {x: 15.309999, y: 20.655388}
     newSize: {x: 3.75, y: 6.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3.9}
+  m_Size: {x: 3.75, y: 19.5}
   m_EdgeRadius: 0
 --- !u!50 &1931708449616526123
 Rigidbody2D:
@@ -150,15 +150,22 @@ MonoBehaviour:
   RootHp: 0
   Value: 0
   MaxValue: 5
-  AddedMaxValue: 0
+  AddedMaxValue: 5
   HasDuplicated: 0
   Range: 45
   RandomValue: 0
+  RacinesNeededForNextPalier: 10
+  RacinesInPalier: 0
+  Palier: 0
   DRPosition: {x: 0, y: 0, z: 0}
   DRRotation: {x: 0, y: 0, z: 0, w: 0}
   RemovedValue: {x: 0, y: 0, z: 0}
-  RacineSprite: {fileID: 21300000, guid: c9286a8dd6084ab4499c693f49e8c64b, type: 3}
-  EndOfRacineSprite: {fileID: 21300000, guid: 45277822bf10ae541b274cdb90a7041a, type: 3}
+  RacineSprite: {fileID: 21300000, guid: 7284d3f75b7773f4cbfbc44ddeb3e8c4, type: 3}
+  RacineSprite1: {fileID: 21300000, guid: 1054c40db03fad644a6c0c63c3584a52, type: 3}
+  RacineSprite2: {fileID: 21300000, guid: 3d33a3ec72575514caecc7fe03a02bc4, type: 3}
+  EndOfRacineSprite: {fileID: 21300000, guid: 87dd33e9136aa5c4f9b95ec213ed7780, type: 3}
+  EndOfRacineSprite1: {fileID: 21300000, guid: 553989f7e09ef0b49b540f8b096f2118, type: 3}
+  EndOfRacineSprite2: {fileID: 21300000, guid: 76c4f742b5e88cc42a4935e7af0f6f8a, type: 3}
   _SpriteRenderer: {fileID: 0}
   DuplicatedRoot: {fileID: 0}
   RacinesManager: {fileID: 0}

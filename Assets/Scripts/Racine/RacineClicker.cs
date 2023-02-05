@@ -7,19 +7,27 @@ public class RacineClicker : MonoBehaviour
 {
     public int RootBaseHp;
     public int RootHp;
-    public int Value;
-    public int MaxValue;
-    public int AddedMaxValue;
+    public float Value;
+    public float MaxValue;
+    public float AddedMaxValue;
     public bool HasDuplicated;
     public int Range;
     public float RandomValue;
+
+    public int RacinesNeededForNextPalier;
+    public int RacinesInPalier;
+    public int Palier;
     public Vector3 DRPosition;
     public Quaternion DRRotation;
 
     public Vector3 RemovedValue;
 
     public Sprite RacineSprite;
+    public Sprite RacineSprite1;
+    public Sprite RacineSprite2;
     public Sprite EndOfRacineSprite;
+    public Sprite EndOfRacineSprite1;
+    public Sprite EndOfRacineSprite2;
 
     public SpriteRenderer _SpriteRenderer;
     public RacineClicker DuplicatedRoot;
@@ -30,7 +38,20 @@ public class RacineClicker : MonoBehaviour
         RacinesManager = GameObject.Find("RacinesManager");
         _SpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         RootHp = RootBaseHp;
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = RacineSprite;
+
+        if((int)Random.Range(0, 2.99f) == 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = RacineSprite;
+        }
+        if ((int)Random.Range(0, 2.99f) == 2)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = RacineSprite1;
+        }
+        if ((int)Random.Range(0, 2.99f) == 3)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = RacineSprite2;
+        }
+
     }
 
     public void Update()
@@ -40,6 +61,11 @@ public class RacineClicker : MonoBehaviour
         {
             Value += 1;
         }*/
+
+        if (RacinesInPalier == RacinesNeededForNextPalier)
+        {
+            Value -= MaxValue * Time.deltaTime / 4;
+        }
 
         if (Value >= MaxValue && HasDuplicated == false)
         {
@@ -60,7 +86,7 @@ public class RacineClicker : MonoBehaviour
         DRRotation = Quaternion.Euler(0, 0, this.gameObject.transform.right.z + RandomValue);
         //DRPosition = new Vector3(this.gameObject.transform.position.x + RandomValue / 45, this.gameObject.transform.position.y - 1.5f);
 
-        DRPosition += /*this.gameObject.transform.TransformDirection*/(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1.5f));
+        DRPosition += /*this.gameObject.transform.TransformDirection*/(new Vector3((Mathf.Clamp01(RandomValue) - 0.5f) * 0.75f, -1f));
 
         Debug.Log(DRPosition.ToString());
 
@@ -68,7 +94,16 @@ public class RacineClicker : MonoBehaviour
         DuplicatedRoot.transform.localPosition = DRPosition;
 
         DuplicatedRoot.Value = 0;
-        DuplicatedRoot.MaxValue = MaxValue + AddedMaxValue;
+        DuplicatedRoot.RacinesInPalier += 1;
+        if(RacinesInPalier >= RacinesNeededForNextPalier)
+        {
+            DuplicatedRoot.MaxValue = MaxValue * AddedMaxValue;
+            DuplicatedRoot.Palier += 1;
+            DuplicatedRoot.RacinesInPalier = 0;
+        }
+
+
+
         DuplicatedRoot.GetComponent<Rigidbody2D>().mass = 1;
         DuplicatedRoot.HasDuplicated = false;
 
@@ -91,9 +126,23 @@ public class RacineClicker : MonoBehaviour
 
                 //this.gameObject.GetComponent<SpriteRenderer>().color = new Color((float)RootHp / (float)RootBaseHp, 175f / 255f, (float)RootHp / (float)RootBaseHp);
 
-                this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
+
+                if ((int)Random.Range(0, 2.99f) == 0)
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite;
+                }
+                if ((int)Random.Range(0, 2.99f) == 2)
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite1;
+                }
+                if ((int)Random.Range(0, 2.99f) == 3)
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = EndOfRacineSprite2;
+                }
 
                 this.gameObject.GetComponent<RacineClicker>().enabled = false;
+
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
 
@@ -107,7 +156,7 @@ public class RacineClicker : MonoBehaviour
     {
         RemovedValue = new Vector3(this.gameObject.transform.localScale.x / 1.25f, this.gameObject.transform.localScale.y / 1.25f);
 
-        this.gameObject.transform.position += transform.TransformDirection(Vector3.up * RemovedValue.y * 0.25f);
+        this.gameObject.transform.position += transform.TransformDirection(Vector3.up * RemovedValue.y * 0.55f);
 
         this.gameObject.transform.localScale = RemovedValue;
 

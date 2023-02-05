@@ -8,6 +8,10 @@ public class MaterialManager : MonoBehaviour
     public int MaterialsCollectedPerRacines;
     public int TotalMaterialsCollectedPerClick;
 
+    public int RacinesNeededForNextPalier;
+    public int RacinesInPalier;
+    public int Palier;
+
     /*public void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -33,5 +37,12 @@ public class MaterialManager : MonoBehaviour
             }
 
         }
+
+        RacinesNeededForNextPalier = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1).GetComponent<RacineClicker>().RacinesNeededForNextPalier;
+
+        RacinesInPalier = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1).GetComponent<RacineClicker>().RacinesInPalier;
+
+        Palier = this.gameObject.transform.GetChild(this.gameObject.transform.childCount - 1).GetComponent<RacineClicker>().Palier;
+
     }
 }
